@@ -104,7 +104,7 @@ angular.module('myApp').controller('chartCtrl',['$scope', '$rootScope', '$route'
 		$scope.$watch('startDate',function(){
 			 offset = 1;
 			 count =  0;
-			tempData = [{"innerSensor":0,"outerSensor":0,"date":"none"}];
+			tempData = [{"innerSensor":0,"outerSensor":0,"date":$scope.startDate}];
 			if($scope.startDate!=null){
 				$scope.startDate.setHours(0,0,0,0);
 				console.log($scope.startDate);
@@ -133,7 +133,7 @@ angular.module('myApp').controller('chartCtrl',['$scope', '$rootScope', '$route'
 			console.log($scope.toDate);
 			offset = 1;
 			 count =  0;
-			tempData = [{"innerSensor":0,"outerSensor":0,"date":"none"}];
+			tempData = [{"innerSensor":0,"outerSensor":0,"date":$scope.toDate}];
 			if($scope.toDate!=null){
 				$scope.toDate.setHours(23,59,59,59);
 				console.log($scope.toDate);
