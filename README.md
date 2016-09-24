@@ -1,5 +1,5 @@
 # CCA_PROJECT
-* From the commandline:
+From the commandline:
 -Clone project
 - Type "npm install" to install dependencies
 - Go to client/src
@@ -19,3 +19,4 @@ Create fake data for local mongoDB
 - Go back to main folder
 - Go to test/connectionTest.js
 
+* herer
