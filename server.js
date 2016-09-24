@@ -3,7 +3,7 @@ var app     = express();
 var main = require('./server/main');
 var server = require('http').createServer(app);  
 var io = require('socket.io')(server);
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 443;
 
 app.use(express.static(__dirname + '/client'));
 var bodyParser = require('body-parser');
