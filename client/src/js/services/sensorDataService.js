@@ -23,8 +23,8 @@ angular.module('myApp').factory('SensorDataService',['$http', 'SensorDBService',
     			count = result.count;
     			callback(count);
     		});
-    		
     	},
+      
     	setToDate: function(to, callback){
     		toDate = to;
     		if(fromDate===null){
@@ -50,6 +50,8 @@ angular.module('myApp').factory('SensorDataService',['$http', 'SensorDBService',
     	},
 
     	getSensorData: function(offset, limit, callback){
+        fromDate.setHours(0,0,0,0);
+        toDate.setHours(23,59,59,59);
     		if (fromDate && toDate && fromDate.getTime()<=toDate.getTime()) {
     			SensorDBService.getItemsByDates({'startDate':fromDate ,'endDate':toDate ,'limit':limit, 'offset':offset}, function(result){
     				tempData = result;

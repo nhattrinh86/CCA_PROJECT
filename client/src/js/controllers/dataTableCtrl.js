@@ -30,4 +30,9 @@ angular.module('myApp').controller('dataTableCtrl',['$scope','$rootScope', '$rou
 				$rootScope.$broadcast("pagination", {limit:$scope.limit, offset:$scope.offset});
 			});	
 		}
+
+		$scope.getCurrentDate = function(dateString){
+			var d = new Date(dateString);
+			return d.toLocaleString();
+		}
 	}]);

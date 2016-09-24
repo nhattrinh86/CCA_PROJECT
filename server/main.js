@@ -45,7 +45,13 @@ var findDataWithDate = function(startDate, endDate, limit, offset, callback){
  	});
 }
 var countDataWithDate = function(startDate, endDate, callback){
- 	var query = {date: { $gte: new Date(startDate), $lte: new Date(endDate) } } ;
+	console.log(startDate);
+	console.log(endDate);
+	var sDate = new Date(startDate).toISOString();
+	var eDate = new Date(endDate).toISOString();
+	console.log("sDate: "  + sDate);
+	console.log("eDate: "  + eDate);
+ 	var query = {date: { $gte: new Date(sDate), $lte: new Date(eDate) } } ;
  	connection.countObjects(collectionName, query, function(err, result){
 		if(err)
 			callback(err, null);
@@ -55,7 +61,7 @@ var countDataWithDate = function(startDate, endDate, callback){
 }
 
 var createSensorData = function(obj,callback){
-	obj.date = new Date(obj.date);
+	obj.date = new Date();
 	connection.insertObj(collectionName, obj, function(err, result){
 		callback(err, result);
 	});
