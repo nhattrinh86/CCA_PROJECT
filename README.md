@@ -12,7 +12,7 @@ How to Run Project:
 Please setup your local mongoDB and have the project point to your local Database. It will prevent you from touching the production data
 
 After having local mongoDB setup
-- Go to server/mongoConnection
+- Go to server/mongoConnection.js
 - Search for "var mongoEnv = config.mongoProductionHost;" and change "mongoProductionHost" to "mongodbHost"
 
 Create fake data for local mongoDB
