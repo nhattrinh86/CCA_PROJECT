@@ -1,6 +1,6 @@
 # CCA_PROJECT
 From the command line:
--Clone project
+- Clone project
 - Type "npm install" to install dependencies
 - Go to client/src
 - Type "bower install" to install all dependencies for client
