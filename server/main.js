@@ -1,5 +1,5 @@
 var connection =  require('./mongoConnection');
-var collectionName =  require('./config').testCollectionName;
+var collectionName =  require('./config').collectionName;
 var getAllItems = function(callback){
 	connection.findAll(collectionName, function(err, result){
 		callback(err, result);

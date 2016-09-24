@@ -2,9 +2,11 @@ var mongoose = require("mongodb").MongoClient;
 var config = require('./config');
 var async = require("async");
 
+var mongoEnv = config.mongoProductionHost;
+
 var dbConnection = function(callback){
-	console.log("config.mongodbHost: "  + config.mongoProductionHost);
-	mongoose.connect(config.mongoProductionHost, function(err,db){
+	console.log("config.mongodbHost: "  + mongoEnv);
+	mongoose.connect(mongoEnv, function(err,db){
 		if(err){
 			callback(err,null);
 			return;

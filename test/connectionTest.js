@@ -33,6 +33,7 @@ describe('MONGO DATABASE Test', function(){
 		}
 	});
 	*/
+	
 	it('Should connect to the local server', function(done){
 		mongoDB.dbConnection(function(err, db){
 			assert.equal(err, null);
