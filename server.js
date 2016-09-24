@@ -3,6 +3,8 @@ var app     = express();
 var main = require('./server/main');
 var server = require('http').createServer(app);  
 var io = require('socket.io')(server);
+var port = process.env.PORT || 80;
+
 app.use(express.static(__dirname + '/client'));
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -71,5 +73,5 @@ app.put('/CAA/sensorDB/v1.0/update/item',function(req, res){
 	});
 });
 
-server.listen(80);
-console.log('Magic happens on 80');
+server.listen(port);
+console.log('Magic happens on ' + port);
