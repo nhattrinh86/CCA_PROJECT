@@ -1,9 +1,9 @@
 # CCA_PROJECT
 From the commandline:
 -Clone project
-- Type #"npm install" to install dependencies
+- Type # "npm install" to install dependencies
 - Go to client/src
-- Type #"bower install" to install all dependencies for client
+- Type # "bower install" to install all dependencies for client
 
 How to Run Project:
 - From main folder type #"Grunt" to start your project
