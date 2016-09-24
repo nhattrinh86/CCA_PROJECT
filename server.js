@@ -71,5 +71,5 @@ app.put('/CAA/sensorDB/v1.0/update/item',function(req, res){
 	});
 });
 
-server.listen(8080);
-console.log('Magic happens on 8080');
+server.listen(80);
+console.log('Magic happens on 80');
