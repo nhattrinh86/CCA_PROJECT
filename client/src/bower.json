@@ -1,0 +1,29 @@
+{
+  "name": "myapp",
+  "homepage": "https://github.com/tpham21/sample",
+  "authors": [
+    "nhattrinh86 <nhat.trinh86@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-chart.js": "^0.10.2",
+    "angular-material": "~1.0.1",
+    "angular-route": "~1.4.8",
+    "angular-ui-grid": "~3.0.7",
+    "bootstrap": "~3.3.6",
+    "ngGallery": "*",
+    "requirejs": "~2.1.22",
+    "angular-material-data-table": "^0.10.9",
+    "angular-socket-io": "^0.7.0",
+    "angular-resource": "^1.5.8"
+  }
+}
