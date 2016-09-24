@@ -1,5 +1,5 @@
 # CCA_PROJECT
-From the commandline:
+* From the commandline:
 -Clone project
 - Type "npm install" to install dependencies
 - Go to client/src
