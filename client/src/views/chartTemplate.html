@@ -1,27 +1,36 @@
 <div ng-controller="chartCtrl" class="padding:20px">
-	<h3> Temperature Sensor Chart</h3>
-	<canvas id="line" class="chart chart-line" height="100" width="400" 
-		chart-data="data"
-	    chart-labels="labels" 
-	    chart-legends="true" 
-	    chart-series="series"
-	    chart-click="onClick" 
-	    chart-colors="chartColors"
-	    chart-options="options"
-	    >
-	</canvas> 
-	<div layout = "row" style="padding:20px;margin:0 auto;display: inline-block;">
-		<span>
+    <div>
+      <div>
+      	<h3> Temperature Sensor Chart</h3>
+      	<canvas id="line" class="chart chart-line" height="100" width="400" 
+      		chart-data="data"
+      	    chart-labels="labels" 
+      	    chart-legends="true" 
+      	    chart-series="series"
+      	    chart-click="onClick" 
+      	    chart-colors="chartColors"
+      	    chart-options="options"
+      	    >
+      	</canvas>
+      </div>
+      <!--  
+      <div felx="30">
+          <h4>Analysis is here</h4>
+      </div>
+      -->
+    </div> 
+	<div layout-gt-xs= "row" layout-xs="column">
+		<div style="padding:0 20px">
 		<label>Start Date</label>
 	    <md-datepicker ng-model="startDate" md-placeholder="Enter date"></md-datepicker>
-	    </span>
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    <span>
+	    </div>
+	    <div style="padding:0 20px">
 	    <label>End Date</label>
 	    <md-datepicker ng-model="toDate" md-placeholder="Enter date"></md-datepicker>
-	    </span>
+	    </div>
 	</div>
 </div>
+
 <style>
 	    .chart-legend {
       list-style-type: none;
