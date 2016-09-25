@@ -12,8 +12,10 @@
       <tbody md-body>
         <tr md-row ng-repeat="temp in tempData">
           <td md-cell>{{getCurrentDate(temp.date)}}</td>
-          <td md-cell>{{temp.innerSensor}}</td>
-          <td md-cell>{{temp.outerSensor}}</td>
+          <td md-cell>{{temp.internal}}</td>
+          <td md-cell>{{temp.external}}</td>
+          <td md-cell>{{temp.input}}</td>
+          <td md-cell>{{temp.output}}</td>
         </tr>
       </tbody>
     </table>

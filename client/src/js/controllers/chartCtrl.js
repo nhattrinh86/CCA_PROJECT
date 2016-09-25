@@ -1,5 +1,5 @@
 angular.module('myApp').controller('chartCtrl',['$scope', '$rootScope', '$route','$location', '$timeout', 'SensorDataService', 'SensorDBService', 'socketio',function($scope, $rootScope, $route, $location, $timeout, SensorDataService, SensorDBService, socketio){
-		$scope.series = ['Inner Sensor', 'Outer Sensor'];
+		$scope.series = ['Internal', 'External', 'Input', 'Output'];
 		var domain = $location.protocol()+"://"+$location.host()+"/CAA/sensorDB/v1.0";
 		console.log(domain);
 		var today = new Date();
@@ -74,13 +74,17 @@ angular.module('myApp').controller('chartCtrl',['$scope', '$rootScope', '$route'
 		//	  	c.destroy();
 		//	 });
 			$scope.data = [];
-			var innerSensors = [];
-			var outerSensors = [];
+			var internal = [];
+			var external = [];
+			var input = [];
+			var output = [];
 			var currentDateLabel = "";
 			$scope.labels = []; 
 			for(var i = 0; i< tempData.length; i++){
-				innerSensors.push(tempData[i]["innerSensor"]);
-				outerSensors.push(tempData[i]["outerSensor"]);
+				internal.push(tempData[i]["internal"]);
+				external.push(tempData[i]["external"]);
+				input.push(tempData[i]['input']);
+				output.push(tempData[i]['output']);
 				/*
 				if(currentDateLabel==="" || tempData[i]["date"].indexOf(currentDateLabel)<0){
 					currentDateLabel = tempData[i]["date"].substring(0,tempData[i]["date"].indexOf("T"))
@@ -97,14 +101,16 @@ angular.module('myApp').controller('chartCtrl',['$scope', '$rootScope', '$route'
 				$scope.labels.push(currentDateLabel);
 
 			};
-			$scope.data.push(innerSensors);
-			$scope.data.push(outerSensors);
+			$scope.data.push(internal);
+			$scope.data.push(external);
+			$scope.data.push(input);
+			$scope.data.push(output);
 		}
 
 		$scope.$watch('startDate',function(){
 			 offset = 1;
 			 count =  0;
-			tempData = [{"innerSensor":0,"outerSensor":0,"date":$scope.startDate}];
+			tempData = [{"intenal": 0, "external": 0, "input": 0, "output": 0, "date":$scope.startDate}];
 			if($scope.startDate!=null){
 				$scope.startDate.setHours(0,0,0,0);
 				console.log($scope.startDate);
@@ -133,7 +139,7 @@ angular.module('myApp').controller('chartCtrl',['$scope', '$rootScope', '$route'
 			console.log($scope.toDate);
 			offset = 1;
 			 count =  0;
-			tempData = [{"innerSensor":0,"outerSensor":0,"date":$scope.toDate}];
+			tempData = [{"intenal": 0, "external": 0, "input": 0, "output": 0, "date":$scope.toDate}];
 			if($scope.toDate!=null){
 				$scope.toDate.setHours(23,59,59,59);
 				console.log($scope.toDate);

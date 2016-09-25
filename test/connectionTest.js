@@ -4,8 +4,10 @@ var assert = require('assert');
 var collection = require('../server/config').testCollectionName;
 var obj = {
 	    "date" : new Date("06/09/16"),
-	    "innerSensor" : 32.12,
-	    "outerSensor" : 23.23
+	    "internal" : 32.12,
+	    "external" : 23.23,
+	    "input" : 32.12,
+	    "output" : 23.23,
 }
 var high =40;
 var low = 35;
@@ -18,8 +20,10 @@ describe('MONGO DATABASE Test', function(){
 				console.log("Count: " + count);
 				var obj = {
 				"date" : new Date(),
-				"innerSensor": Math.random() * 10 + low,
-				"outerSensor": Math.random() * 10 + high,
+				"internal": Math.random() * 10 + low,
+				"external": Math.random() * 10 + high,
+				"input": Math.random() * 10 + low,
+				"output": Math.random() * 10 + high,
 				}
 				mongoDB.insertObj(collection, obj, function(err, result){
 					assert.equal(err, null);
